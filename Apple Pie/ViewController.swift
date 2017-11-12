@@ -49,6 +49,12 @@ class ViewController: UIViewController {
     
     // Functie die het bord bijhoud, boom en scorelables.
     func updateUI() {
+        var letters = [String]()
+        for letter in currentGame.formattedWord.characters {
+            letters.append(String(letter))
+        }
+        let wordWithSpacing = letters.joined(separator: " ")
+        correctWordLabel.text = wordWithSpacing
         scoreLabel.text = "Wins: \(totalWins), Losses: \(totalLosses)"
         treeImageView.image = UIImage(named: "Tree \(currentGame.incorrectMovesRemaining)")
     }
