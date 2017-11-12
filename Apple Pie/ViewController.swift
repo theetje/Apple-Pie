@@ -23,8 +23,13 @@ class ViewController: UIViewController {
     @IBOutlet weak var correctWordLabel: UILabel!
     @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet var letterButtons: [UIButton]!
+    // is buttonTapped maar achterlijke voorbeeld noemde het eerst buttonPressed en ik blijf slepen.
     @IBAction func buttonPressed(_ sender: UIButton) {
         sender.isEnabled = false
+        let letterSting = sender.title(for: .normal)!
+        let letter = Character(letterSting.lowercased())
+        currentGame.playerGuessed(letter: letter)
+        updateUI()
     }
     
     override func viewDidLoad() {
@@ -38,7 +43,7 @@ class ViewController: UIViewController {
     // Functie voor het starten van een nieuwe ronden.
     func newRound() {
         let newWord = listOfWords.removeFirst()
-        currentGame = Game(word: newWord, incorrectMovesRemaining: incorrectMovesAllowed)
+        currentGame = Game(word: newWord, incorrectMovesRemaining: incorrectMovesAllowed, guessedLetters: [])
         updateUI()
     }
     
