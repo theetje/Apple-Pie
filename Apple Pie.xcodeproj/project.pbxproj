@@ -14,6 +14,7 @@
 		E9760C161FB8F4FA0026B44D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9760C141FB8F4FA0026B44D /* LaunchScreen.storyboard */; };
 		E9760C211FB8F4FA0026B44D /* Apple_PieTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9760C201FB8F4FA0026B44D /* Apple_PieTests.swift */; };
 		E9760C2C1FB8F4FB0026B44D /* Apple_PieUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9760C2B1FB8F4FB0026B44D /* Apple_PieUITests.swift */; };
+		E9760C3A1FB8FE050026B44D /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9760C391FB8FE050026B44D /* Game.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		E9760C271FB8F4FA0026B44D /* Apple PieUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Apple PieUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9760C2B1FB8F4FB0026B44D /* Apple_PieUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Apple_PieUITests.swift; sourceTree = "<group>"; };
 		E9760C2D1FB8F4FB0026B44D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E9760C391FB8FE050026B44D /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +102,7 @@
 				E9760C0B1FB8F4FA0026B44D /* AppDelegate.swift */,
 				E9760C0D1FB8F4FA0026B44D /* ViewController.swift */,
 				E9760C0F1FB8F4FA0026B44D /* Main.storyboard */,
+				E9760C391FB8FE050026B44D /* Game.swift */,
 				E9760C121FB8F4FA0026B44D /* Assets.xcassets */,
 				E9760C141FB8F4FA0026B44D /* LaunchScreen.storyboard */,
 				E9760C171FB8F4FA0026B44D /* Info.plist */,
@@ -260,6 +263,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E9760C0E1FB8F4FA0026B44D /* ViewController.swift in Sources */,
+				E9760C3A1FB8FE050026B44D /* Game.swift in Sources */,
 				E9760C0C1FB8F4FA0026B44D /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
