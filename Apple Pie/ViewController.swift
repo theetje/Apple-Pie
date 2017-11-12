@@ -14,9 +14,17 @@ class ViewController: UIViewController {
     // Aantal keer dat geraden mag worden.
     let incorrectMovesAllowed = 7
     
-    // Bijhouden score.
-    let totalWins = 0
-    let totalLosses = 0
+    // Bijhouden score. (WAS EERST let........)
+    var totalWins = 0 {
+        didSet {
+            newRound()
+        }
+    }
+    var totalLosses = 0 {
+        didSet {
+            newRound()
+        }
+    }
 
     // Verbinding met de view (knoppen en lables) plus een hanler van de knoppen.
     @IBOutlet weak var treeImageView: UIImageView!
@@ -29,7 +37,17 @@ class ViewController: UIViewController {
         let letterSting = sender.title(for: .normal)!
         let letter = Character(letterSting.lowercased())
         currentGame.playerGuessed(letter: letter)
-        updateUI()
+        updateGameState()
+    }
+    
+    func updateGameState() {
+        if currentGame.incorrectMovesRemaining == 0 {
+            totalLosses += 1
+        } else if currentGame.word == currentGame.formattedWord {
+            totalWins += 1
+        } else {
+            updateUI()
+        }
     }
     
     override func viewDidLoad() {
@@ -42,9 +60,20 @@ class ViewController: UIViewController {
     
     // Functie voor het starten van een nieuwe ronden.
     func newRound() {
-        let newWord = listOfWords.removeFirst()
-        currentGame = Game(word: newWord, incorrectMovesRemaining: incorrectMovesAllowed, guessedLetters: [])
-        updateUI()
+        if !listOfWords.isEmpty {
+            let newWord = listOfWords.removeFirst()
+            currentGame = Game(word: newWord, incorrectMovesRemaining: incorrectMovesAllowed, guessedLetters: [])
+            enableLetterButtons(true)
+            updateUI()
+        } else {
+            enableLetterButtons(false)
+        }
+    }
+    
+    func enableLetterButtons(_ enable: Bool) {
+        for button in letterButtons {
+            button.isEnabled = enable
+        }
     }
     
     // Functie die het bord bijhoud, boom en scorelables.
